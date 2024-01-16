@@ -80,6 +80,12 @@ const routes: Route[] = [
     },
   },
   {
+    path: "/achievements",
+    load: (): void => {
+      PageController.change("achievements");
+    },
+  },
+  {
     path: "/login",
     load: (): void => {
       if (!Auth) {

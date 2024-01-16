@@ -9,6 +9,7 @@ declare namespace MonkeyTypes {
     | "loading"
     | "test"
     | "settings"
+    | "achievements"
     | "about"
     | "account"
     | "login"
@@ -415,6 +416,7 @@ declare namespace MonkeyTypes {
     numbers?: boolean;
     punctuation?: boolean;
     hash?: string;
+    challenge?: string;
   }
 
   interface ApeKey {
@@ -918,5 +920,10 @@ declare namespace MonkeyTypes {
     fullUnitString: string;
     histogramDataBucketSize: number;
     historyStepSize: number;
+  }
+
+  interface Achievements {
+    uid: string;
+    achievements: { [achievementId: string]: number };
   }
 }

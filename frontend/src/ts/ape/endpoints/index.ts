@@ -1,4 +1,5 @@
 import Configs from "./configs";
+import Achievements from "./achievements";
 import Leaderboards from "./leaderboards";
 import Presets from "./presets";
 import Psas from "./psas";
@@ -11,6 +12,7 @@ import Configuration from "./configuration";
 
 export default {
   Configs,
+  Achievements,
   Leaderboards,
   Presets,
   Psas,

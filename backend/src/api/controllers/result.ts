@@ -448,12 +448,10 @@ export async function addResult(
     }
   }
 
-  if (
-    result.challenge &&
-    AutoRoleList.includes(result.challenge) &&
-    user.discordId
-  ) {
-    GeorgeQueue.awardChallenge(user.discordId, result.challenge);
+  if (result.challenge && AutoRoleList.includes(result.challenge)) {
+    if (user.discordId) {
+      GeorgeQueue.awardChallenge(user.discordId, result.challenge);
+    }
   } else {
     delete result.challenge;
   }

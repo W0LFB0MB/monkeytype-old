@@ -12,6 +12,7 @@ const httpClient = buildHttpClient(API_URL, 10000);
 const Ape = {
   users: new endpoints.Users(httpClient),
   configs: new endpoints.Configs(httpClient),
+  achievements: new endpoints.Achievements(httpClient),
   results: new endpoints.Results(httpClient),
   psas: new endpoints.Psas(httpClient),
   quotes: new endpoints.Quotes(httpClient),

@@ -395,6 +395,13 @@ declare namespace MonkeyTypes {
     frontendFunctions?: string[];
   }
 
+  interface Achievements {
+    uid: string;
+    achievements: {
+      [achievementId: string]: number;
+    };
+  }
+
   interface PremiumInfo {
     startTimestamp: number;
     expirationTimestamp: number;

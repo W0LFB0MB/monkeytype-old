@@ -1,6 +1,7 @@
 import * as Misc from "../utils/misc";
 import * as ActivePage from "../states/active-page";
 import * as Settings from "../pages/settings";
+import * as Achievements from "../pages/achievements";
 import * as Account from "../pages/account";
 import * as PageTest from "../pages/test";
 import * as PageAbout from "../pages/about";
@@ -48,6 +49,7 @@ export async function change(
       loading: PageLoading.page,
       test: PageTest.page,
       settings: Settings.page,
+      achievements: Achievements.page,
       about: PageAbout.page,
       account: Account.page,
       login: PageLogin.page,

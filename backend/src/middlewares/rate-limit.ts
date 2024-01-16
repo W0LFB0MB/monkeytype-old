@@ -122,6 +122,14 @@ export const configGet = rateLimit({
   handler: customHandler,
 });
 
+// Achievements Routing
+export const achievementsGet = rateLimit({
+  windowMs: ONE_HOUR_MS,
+  max: 120 * REQUEST_MULTIPLIER,
+  keyGenerator: getKeyWithUid,
+  handler: customHandler,
+});
+
 // Leaderboards Routing
 export const leaderboardsGet = rateLimit({
   windowMs: ONE_HOUR_MS,

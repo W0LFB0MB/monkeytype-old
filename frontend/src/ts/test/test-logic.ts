@@ -55,6 +55,7 @@ import * as MemoryFunboxTimer from "./funbox/memory-funbox-timer";
 import * as KeymapEvent from "../observables/keymap-event";
 import * as LayoutfluidFunboxTimer from "../test/funbox/layoutfluid-funbox-timer";
 import * as Wordset from "./wordset";
+import * as Achievements from "../pages/achievements";
 
 let failReason = "";
 const koInputVisual = document.getElementById("koInputVisual") as HTMLElement;
@@ -678,7 +679,6 @@ interface CompletedEvent extends MonkeyTypes.Result<MonkeyTypes.Mode> {
   customText: MonkeyTypes.CustomText;
   wpmConsistency: number;
   lang: string;
-  challenge?: string | null;
   keyOverlap: number;
   lastKeyToEnd: number;
   startToFirstKey: number;
@@ -1234,6 +1234,8 @@ async function saveResult(
   }
 
   const response = await Ape.results.save(completedEvent);
+
+  Achievements.proccessAchievementProgress(completedEvent, response.data);
 
   AccountButton.loading(false);
 
